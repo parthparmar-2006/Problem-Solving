@@ -1,0 +1,23 @@
+// Author: Parth Parmar
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for (int i=0; i<n; i++) {
+            cin >> arr[i];
+        }
+        sort(arr.begin(), arr.end());
+        int maxi = 0;
+        for (int i=0; i<n; i+=2) {
+            maxi = max(maxi, arr[i+1]-arr[i]);
+        } 
+        cout << maxi << endl;
+    }
+    return 0;
+}
